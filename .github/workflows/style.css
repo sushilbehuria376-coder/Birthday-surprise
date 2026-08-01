@@ -1,0 +1,455 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffb6d9,#ffd6ec);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+
+/* Main Card */
+
+.container{
+    max-width:800px;
+    width:100%;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+    animation:fade 1s;
+}
+
+
+/* Glowing Birthday Heading */
+
+h1{
+    color:#ff2e8a;
+    margin-bottom:10px;
+    font-size:45px;
+
+    text-shadow:
+    0 0 10px #ff69b4,
+    0 0 20px #ff1493,
+    0 0 30px #ff1493;
+
+    animation:glow 2s infinite alternate;
+}
+
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px #ff69b4,
+        0 0 20px #ff1493;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px white,
+        0 0 40px #ff1493,
+        0 0 60px #ff1493;
+    }
+}
+
+
+
+.subtitle{
+    color:#666;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+
+
+/* Slideshow */
+
+.slideshow img{
+
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+
+    border-radius:15px;
+    border:5px solid #ff69b4;
+
+    box-shadow:
+    0 0 20px rgba(255,105,180,.5);
+
+}
+
+
+
+/* Buttons */
+
+button{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(45deg,#ff2e8a,#ff69b4);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 0 15px rgba(255,0,100,.5);
+
+}
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#e91e63;
+
+}
+
+
+
+/* Letter Box */
+
+
+.letter{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:20px;
+
+    background:#fff0f7;
+
+    border-radius:15px;
+
+    text-align:left;
+
+    line-height:1.8;
+
+    animation:fade 1s;
+
+}
+
+
+
+.letter h2{
+
+    text-align:center;
+
+    color:#ff2e8a;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* Fade Animation */
+
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Gift Message */
+
+
+#gift{
+
+    font-size:22px;
+
+    font-family:cursive;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    animation:show 2s;
+
+}
+
+
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+/* Floating Hearts */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    color:#ff2e8a;
+
+    font-size:25px;
+
+    pointer-events:none;
+
+    animation:float 6s linear forwards;
+
+}
+
+
+
+@keyframes float{
+
+
+    0%{
+
+        transform:translateY(0) scale(.5) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:translateY(-110vh) scale(1.5) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+/* Sparkles */
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✨";
+
+    position:fixed;
+
+    font-size:40px;
+
+    animation:sparkle 2s infinite;
+
+}
+
+
+.sparkles::before{
+
+    top:20%;
+
+    left:20%;
+
+}
+
+
+.sparkles::after{
+
+    top:70%;
+
+    right:20%;
+
+}
+
+
+
+@keyframes sparkle{
+
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.5);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+}
+/* Secret Code */
+
+.secret-box{
+
+margin-top:30px;
+
+padding:20px;
+
+background:#fff0f7;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+
+.secret-box input{
+
+padding:12px;
+
+border-radius:20px;
+
+border:2px solid #ff69b4;
+
+outline:none;
+
+font-size:16px;
+
+text-align:center;
+
+}
+
+
+
+/* Gift Box */
+
+.gift-box{
+
+display:none;
+
+font-size:90px;
+
+cursor:pointer;
+
+margin-top:30px;
+
+animation:shake 1.5s infinite;
+
+}
+
+
+
+@keyframes shake{
+
+0%{
+transform:rotate(0);
+}
+
+25%{
+transform:rotate(10deg);
+}
+
+50%{
+transform:rotate(-10deg);
+}
+
+75%{
+transform:rotate(10deg);
+}
+
+100%{
+transform:rotate(0);
+}
+
+}
+
+
+
+.gift-message{
+
+display:none;
+
+margin-top:25px;
+
+padding:20px;
+
+font-size:22px;
+
+font-family:cursive;
+
+color:#ff2e8a;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 0 20px pink;
+
+animation:fade 1s;
+
+}
